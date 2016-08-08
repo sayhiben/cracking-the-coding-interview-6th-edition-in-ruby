@@ -1,7 +1,7 @@
 # 1.1 Is Unique:
-#   Implement an algorithm to determine if a string has all unique characters. 
+#   Implement an algorithm to determine if a string has all unique characters.
 #   What if you cannot use additional data structures?
-# 
+#
 
 # This solution inspects each character in a linear fashion, adding them to a
 #   ruby Set along the way. If it encounters a character that has already been
@@ -32,7 +32,7 @@ def is_unique_without_set?(str)
   # Initialize checker to be empty (no characters have been "marked")
   checker = 0
   str.each_char do |char|
-    return false if checker & (1 << char.ord) > 0
+    return false if (checker & (1 << char.ord)).positive?
 
     # Mark a character in the checker by bit shifting 1 a number of times equal
     #   to the character's decimal ascii value

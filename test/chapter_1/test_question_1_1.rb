@@ -9,7 +9,7 @@ class TestQuestion_1_1 < Minitest::Test
 
   def test_string_has_duplicate_characters
     str = 'qwertyuiopqwertyuiop'
-    assert !is_unique?(str)
+    assert is_unique?(str) == false
   end
 
   def test_string_has_unique_characters_without_set
@@ -19,6 +19,6 @@ class TestQuestion_1_1 < Minitest::Test
 
   def test_string_has_duplicate_characters_without_set
     str = 'qwertyuiopqwertyuiop'
-    assert !is_unique_without_set?(str)
+    assert is_unique_without_set?(str) == false
   end
 end
