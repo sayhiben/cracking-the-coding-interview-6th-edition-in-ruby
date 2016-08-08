@@ -26,7 +26,7 @@ def one_away?(str1, str2)
   j = 0
   diffs = 0
   while i < str1.length && j < str2.length
-    # The characters are the same
+    # The characters are the same. Increment both cursors.
     if str1[i] == str2[j]
       i += 1
       j += 1
