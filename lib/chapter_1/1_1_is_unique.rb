@@ -6,11 +6,11 @@
 # This solution inspects each character in a linear fashion, adding them to a
 #   ruby Set along the way. If it encounters a character that has already been
 #   added to the Set, it will return false.
-# 
+#
 # Time complexity: The linear inspection of the string takes O(n) time.
 # Space complexity: O(n) extra space is used in the Set
-# 
-def is_unique?(str)
+#
+def unique?(str)
   set = Set.new
   str.each_char do |char|
     return false if set.include? char
@@ -19,16 +19,15 @@ def is_unique?(str)
   true
 end
 
-
 # This (poorly named) solution to the followup question foregoes the extra O(n)
 #   extra space used in the Set by utilizing bit shifting. I've included this
 #   solution for the sake of completeness. I prefer the readability that the
 #   Set provides to the space optimization here.
-# 
+#
 # Time complexity: O(n)
 # Space complexity: O(1)
 #
-def is_unique_without_set?(str)
+def unique_without_set?(str)
   # Initialize checker to be empty (no characters have been "marked")
   checker = 0
   str.each_char do |char|

@@ -1,24 +1,24 @@
 require 'test_helper.rb'
-require './lib/chapter_1/question_1_1.rb'
+require './lib/chapter_1/1_1_is_unique.rb'
 
-class TestQuestion_1_1 < Minitest::Test
+class TestIsUnique < Minitest::Test
   def test_string_has_unique_characters
     str = 'qwertyuiop1234567890'
-    assert is_unique?(str)
+    assert unique?(str)
   end
 
   def test_string_has_duplicate_characters
     str = 'qwertyuiopqwertyuiop'
-    assert is_unique?(str) == false
+    assert unique?(str) == false
   end
 
   def test_string_has_unique_characters_without_set
     str = 'qwertyuiop1234567890'
-    assert is_unique_without_set?(str)
+    assert unique_without_set?(str)
   end
 
   def test_string_has_duplicate_characters_without_set
     str = 'qwertyuiopqwertyuiop'
-    assert is_unique_without_set?(str) == false
+    assert unique_without_set?(str) == false
   end
 end
