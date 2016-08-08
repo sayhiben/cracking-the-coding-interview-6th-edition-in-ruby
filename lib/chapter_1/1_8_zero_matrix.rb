@@ -14,7 +14,6 @@
 #   row and column.
 #
 class Matrix
-
   def initialize(matrix)
     @matrix = matrix
   end
@@ -29,10 +28,10 @@ class Matrix
   private
 
   def zero_coordinates
-    coordinates = { rows: [], cols: []}
+    coordinates = { rows: [], cols: [] }
     @matrix.each_with_index do |row, i|
       row.each_with_index do |value, j|
-        if value == 0
+        if value.zero?
           coordinates[:rows] |= [i]
           coordinates[:cols] |= [j]
         end
@@ -43,7 +42,7 @@ class Matrix
 
   def zero_rows(rows)
     rows.each do |row|
-      @matrix[row] = @matrix[row].map{ 0 }
+      @matrix[row] = @matrix[row].map { 0 }
     end
   end
 
@@ -54,5 +53,4 @@ class Matrix
       end
     end
   end
-
 end
