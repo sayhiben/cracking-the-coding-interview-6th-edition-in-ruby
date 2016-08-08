@@ -18,11 +18,11 @@ def urlify(str, true_length)
     #   string to insert '%20'.
     if str[j] == ' '
       str[(i - 2)..i] = '%20'
-      i -= 2
+      i -= 3
     else
       str[i] = str[j]
+      i -= 1
     end
-    i -= 1
     j -= 1
   end
   str

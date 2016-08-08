@@ -16,4 +16,9 @@ class TestUrlify < Minitest::Test
     str = 'nospaces'
     assert_equal str, urlify(str, 8)
   end
+
+  def test_urlify_leading_spaces
+    str = '  spaces    '
+    assert_equal '%20%20spaces', urlify(str, 8)
+  end
 end

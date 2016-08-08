@@ -33,6 +33,7 @@ class PermutationChecker
 
     private
 
+    # Returns a hash with characters as keys and number of occurrences as values
     def count_characters(str)
       character_counts = {}
 
