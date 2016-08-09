@@ -21,9 +21,7 @@ def palindrome?(node)
   end
 
   # length is odd, so skip one
-  unless cursor_fast.nil?
-    cursor_slow = cursor_slow.next
-  end
+  cursor_slow = cursor_slow.next unless cursor_fast.nil?
 
   # verify 2nd half of the string is the same as the first
   until cursor_slow.nil?
