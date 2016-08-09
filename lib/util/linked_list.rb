@@ -1,12 +1,24 @@
 module Util
+  # Provides a basic implementation of a linked list
   class LinkedList
     attr_accessor :head
 
+    # Provides a basic implementation of a linked list node
     class Node
       attr_accessor :data, :next
 
       def initialize(data)
         @data = data
+      end
+
+      def to_a
+        cursor = self
+        ary = []
+        until cursor.nil?
+          ary << cursor.data
+          cursor = cursor.next
+        end
+        ary
       end
 
       def to_s
@@ -26,13 +38,7 @@ module Util
     end
 
     def to_a
-      cursor = @head
-      ary = []
-      until cursor.nil?
-        ary << cursor.data
-        cursor = cursor.next
-      end
-      ary
+      @head.to_a
     end
   end
 end

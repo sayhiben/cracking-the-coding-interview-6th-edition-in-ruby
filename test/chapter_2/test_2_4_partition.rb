@@ -24,5 +24,4 @@ class TestPartition < Minitest::Test
       result = result.next
     end
   end
-
 end

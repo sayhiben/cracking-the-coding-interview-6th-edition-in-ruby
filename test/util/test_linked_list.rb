@@ -34,4 +34,10 @@ class TestLinkedList < Minitest::Test
     @data.each { |val| list.append(val) }
     assert_equal @data, list.to_a
   end
+
+  def test_node_do_a
+    list = LinkedList.new
+    @data.each { |val| list.append(val) }
+    assert_equal @data, list.head.to_a
+  end
 end

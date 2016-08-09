@@ -22,34 +22,34 @@ class TestRotateMatrix < Minitest::Test
 
   def test_rotate_even
     matrix = [
-      ['a', 'b', 'c', 'd'],
-      ['e', 'f', 'g', 'h'],
-      ['i', 'j', 'k', 'l'],
-      ['m', 'n', 'o', 'p']
+      %w(a b c d),
+      %w(e f g h),
+      %w(i j k l),
+      %w(m n o p)
     ]
     rotated = [
-      ['m', 'i', 'e', 'a'],
-      ['n', 'j', 'f', 'b'],
-      ['o', 'k', 'g', 'c'],
-      ['p', 'l', 'h', 'd']
+      %w(m i e a),
+      %w(n j f b),
+      %w(o k g c),
+      %w(p l h d)
     ]
     assert_equal rotated, rotate(matrix)
   end
 
   def test_rotate_odd
     matrix = [
-      ['a', 'b', 'c', 'd', '0'],
-      ['e', 'f', 'g', 'h', '1'],
-      ['i', 'j', 'k', 'l', '2'],
-      ['m', 'n', 'o', 'p', '3'],
-      ['q', 'r', 's', 't', '4']
+      %w(a b c d 0),
+      %w(e f g h 1),
+      %w(i j k l 2),
+      %w(m n o p 3),
+      %w(q r s t 4)
     ]
     rotated = [
-      ['q', 'm', 'i', 'e', 'a'],
-      ['r', 'n', 'j', 'f', 'b'],
-      ['s', 'o', 'k', 'g', 'c'],
-      ['t', 'p', 'l', 'h', 'd'],
-      ['4', '3', '2', '1', '0']
+      %w(q m i e a),
+      %w(r n j f b),
+      %w(s o k g c),
+      %w(t p l h d),
+      %w(4 3 2 1 0)
     ]
     assert_equal rotated, rotate(matrix)
   end
