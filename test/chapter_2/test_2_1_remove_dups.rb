@@ -6,7 +6,7 @@ class TestRemoveDups < Minitest::Test
   include Util
 
   def setup
-    @data = %w(a b c a d d e f g)
+    @data = %w(a a b c a d d e f g g)
     @list = LinkedList.new
     @data.each { |val| @list.append(val) }
   end

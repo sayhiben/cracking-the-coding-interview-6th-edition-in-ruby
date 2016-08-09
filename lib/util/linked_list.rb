@@ -20,9 +20,7 @@ module Util
         @head = new_node
       else
         cursor = @head
-        while !cursor.next.nil?
-          cursor = cursor.next
-        end
+        cursor = cursor.next until cursor.next.nil?
         cursor.next = new_node
       end
     end
@@ -30,7 +28,7 @@ module Util
     def to_a
       cursor = @head
       ary = []
-      while !cursor.nil?
+      until cursor.nil?
         ary << cursor.data
         cursor = cursor.next
       end

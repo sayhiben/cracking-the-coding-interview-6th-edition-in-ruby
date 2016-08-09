@@ -12,7 +12,7 @@
 def remove_dups(node)
   return if node.nil? || node.next.nil?
   set = Set.new
-  while !node.nil?
+  until node.nil?
     set << node.data
     if !node.next.nil? && set.include?(node.next.data)
       node.next = node.next.next
@@ -31,9 +31,9 @@ end
 def remove_dups_alt(node)
   return if node.nil? || node.next.nil?
   cursor = node
-  while !cursor.nil?
+  until cursor.nil?
     deletion_cursor = cursor
-    while !deletion_cursor.nil?
+    until deletion_cursor.nil?
       if !deletion_cursor.next.nil? && deletion_cursor.next.data == cursor.data
         deletion_cursor.next = deletion_cursor.next.next
       end
