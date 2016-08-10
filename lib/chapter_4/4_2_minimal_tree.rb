@@ -17,7 +17,7 @@
 def to_bst(array)
   mid_index = array.length / 2
   # Create node from middle value
-  node = Tree::Node.new(mid_index)
+  node = Tree::Node.new(array[mid_index])
   if array.length > 1
     left_array = array[0..mid_index - 1]
     right_array = array[mid_index + 1..array.length - 1]
