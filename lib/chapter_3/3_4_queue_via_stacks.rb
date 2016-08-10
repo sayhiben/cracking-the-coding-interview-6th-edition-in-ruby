@@ -9,41 +9,8 @@
 #   stack are popped off and pushed onto the dequeueing stack.
 #
 
-require './lib/util/linked_list.rb'
+require './lib/util/stack.rb'
 include Util
-
-# Implements a stack using a basic linked list
-class Stack
-  def initialize
-    @stack = LinkedList.new
-  end
-
-  def push(val)
-    node = LinkedList::Node.new(val)
-    node.next = @stack.head
-    @stack.head = node
-  end
-
-  def pop
-    tmp = @stack.head
-    @stack.head = @stack.head.next unless @stack.head.nil?
-    tmp.data
-  end
-
-  def peek
-    @stack.head
-  end
-
-  def to_a
-    cursor = @stack.head
-    ary = []
-    until cursor.nil?
-      ary << cursor.data
-      cursor = cursor.next
-    end
-    ary
-  end
-end
 
 # Implements a queue using two Stacks
 class Queue
@@ -67,8 +34,6 @@ class Queue
   private
 
   def fill_dequeue_stack
-    until @stacks[0].peek.nil?
-      @stacks[1].push(@stacks[0].pop)
-    end
+    @stacks[1].push(@stacks[0].pop) until @stacks[0].peek.nil?
   end
 end
