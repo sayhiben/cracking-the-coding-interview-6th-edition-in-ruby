@@ -19,6 +19,7 @@ include Util
 #   we inspect the top item on the stack
 #
 class Stack
+  # Maintains the current min value in the stack in addition to the item's value
   class StackItem
     attr_accessor :value, :min
     def initialize(value, min)
@@ -50,9 +51,7 @@ class Stack
 
   def pop
     tmp = @stack.head
-    unless @stack.head.nil?
-      @stack.head = @stack.head.next
-    end
+    @stack.head = @stack.head.next unless @stack.head.nil?
     tmp
   end
 

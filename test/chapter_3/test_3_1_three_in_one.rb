@@ -67,5 +67,4 @@ class TestThreeInOne < Minitest::Test
     @stacks.pop(0)
     assert_equal ['a', nil, 'b', nil, 'c'], @stacks.array
   end
-
 end

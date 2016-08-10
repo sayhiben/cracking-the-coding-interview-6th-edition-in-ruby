@@ -39,7 +39,7 @@ class ArrayStacks
     end
 
     def empty?
-      @head_offset == 0
+      @head_offset.zero?
     end
 
     def head_index
@@ -64,9 +64,7 @@ class ArrayStacks
   def push(stack_index, data)
     stack = @stacks[stack_index]
     # If the stack is full, double its available size
-    if stack.full?
-      resize_stack(stack_index, stack.size * 2)
-    end
+    resize_stack(stack_index, stack.size * 2) if stack.full?
     @array[stack.head_index] = data
     stack.head_offset += 1
   end
