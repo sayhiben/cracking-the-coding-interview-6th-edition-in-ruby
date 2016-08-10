@@ -4,8 +4,6 @@
 #   into any other data structure (such as an array). The stack supports the
 #   following operations: push, pop, peek, empty?
 #
-require './lib/util/stack.rb'
-include Util
 
 # Time complexity: O(n^2), as all elements are shuffled between two lists n
 #   times

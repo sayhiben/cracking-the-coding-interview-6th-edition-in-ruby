@@ -9,9 +9,6 @@
 #   stack are popped off and pushed onto the dequeueing stack.
 #
 
-require './lib/util/stack.rb'
-include Util
-
 # Implements a queue using two Stacks
 class Queue
   def initialize

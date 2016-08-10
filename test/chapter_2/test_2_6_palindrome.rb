@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_6_palindrome.rb'
 
 class TestPalindrome < Minitest::Test
-  include Util
-
   def setup
     @list1 = LinkedList.new
   end

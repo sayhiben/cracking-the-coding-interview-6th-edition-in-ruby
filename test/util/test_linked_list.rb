@@ -1,9 +1,6 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 
 class TestLinkedList < Minitest::Test
-  include Util
-
   def setup
     @data = %w(qwer tyui opas)
   end

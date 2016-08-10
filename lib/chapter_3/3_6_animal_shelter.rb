@@ -17,8 +17,6 @@
 #   alongside the type of animal (and, in the real world, any additional
 #   information about the animal)
 #
-require './lib/util/linked_list.rb'
-include Util
 
 # Basic record class to hold data
 class AnimalRecord
@@ -30,45 +28,14 @@ class AnimalRecord
   end
 end
 
-# Implements a queue from LinkedList
-class Queue
-  attr_accessor :head, :tail
-
-  def initialize
-    @list = LinkedList.new
-  end
-
-  def enqueue(item)
-    node = LinkedList::Node.new(item)
-    @head = node if @head.nil?
-    @tail.next = node unless @tail.nil?
-    @tail = node
-  end
-
-  def dequeue
-    tmp = @head
-    @head = @head.next unless @head.nil?
-    @tail = nil if @head.nil?
-    tmp.data
-  end
-
-  def peek
-    @head.nil? ? nil : @head.data
-  end
-
-  def empty?
-    @head.nil?
-  end
-end
-
 # Manages multiple queues of animals
 class AnimalShelter
   VALID_ANIMAL_TYPES = %w(dog cat)
 
   def initialize
     @next_id = 0
-    @dog_queue = Queue.new
-    @cat_queue = Queue.new
+    @dog_queue = BasicQueue.new
+    @cat_queue = BasicQueue.new
   end
 
   def enqueue(options = {})

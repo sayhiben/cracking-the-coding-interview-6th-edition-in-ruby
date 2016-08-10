@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_4_partition.rb'
 
 class TestPartition < Minitest::Test
-  include Util
-
   def setup
     @data = [11, 3, 5, 8, 5, 10, 2, 1]
     @list = LinkedList.new

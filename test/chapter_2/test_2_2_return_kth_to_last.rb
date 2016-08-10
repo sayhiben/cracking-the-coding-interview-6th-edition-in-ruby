@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_2_return_kth_to_last.rb'
 
 class TestReturnKthToLast < Minitest::Test
-  include Util
-
   def setup
     @data = ('a'..'z').to_a
     @list = LinkedList.new

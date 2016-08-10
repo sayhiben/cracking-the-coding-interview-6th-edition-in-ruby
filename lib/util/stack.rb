@@ -1,5 +1,3 @@
-require './lib/util/linked_list.rb'
-
 module Util
   # Implements a stack using a basic linked list
   class Stack

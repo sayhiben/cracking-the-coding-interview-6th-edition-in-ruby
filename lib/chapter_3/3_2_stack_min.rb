@@ -9,9 +9,6 @@
 #   min value. This implies that we must cache it somewhere.
 #
 
-require './lib/util/linked_list.rb'
-include Util
-
 # This implementation uses a linked list to construct a stack. Each item on the
 #   stack is a StackItem that contains the original data and an additional min
 #   value. When adding items to the stack, the current min value is stored on

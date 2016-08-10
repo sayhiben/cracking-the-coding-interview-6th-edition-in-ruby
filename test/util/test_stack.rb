@@ -1,9 +1,6 @@
 require 'test_helper.rb'
-require './lib/util/stack.rb'
 
 class TestLinkedList < Minitest::Test
-  include Util
-
   def setup
     @stack = Stack.new
   end

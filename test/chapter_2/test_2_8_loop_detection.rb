@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_8_loop_detection.rb'
 
 class TestLoopDetection < Minitest::Test
-  include Util
-
   def setup
     @list1 = LinkedList.new
   end

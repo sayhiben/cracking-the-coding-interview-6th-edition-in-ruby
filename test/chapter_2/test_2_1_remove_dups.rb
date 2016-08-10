@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_1_remove_dups.rb'
 
 class TestRemoveDups < Minitest::Test
-  include Util
-
   def setup
     @data = %w(a a b c a d d e f g g)
     @list = LinkedList.new

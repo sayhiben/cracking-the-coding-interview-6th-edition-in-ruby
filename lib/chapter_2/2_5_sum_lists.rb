@@ -4,11 +4,9 @@
 #   digit is at the head of the list. Write a function that adds the two numbers
 #   and returns the sum as a linked list.
 #
-require './lib/util/linked_list.rb'
-include Util
-
-# When the values are stored in reverse, this problem can be solved iteratively
-#   by storing the carry value as it goes.
+# Discussion:
+#   When the values are stored in reverse, this problem can be solved
+#   iteratively by storing the carry value as it goes.
 #
 # Time complexity: O([node1.length, node2.length].max) since it will iterate
 #   until the last value of the longest list

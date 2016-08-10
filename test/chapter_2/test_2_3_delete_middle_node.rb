@@ -1,10 +1,7 @@
 require 'test_helper.rb'
-require './lib/util/linked_list.rb'
 require './lib/chapter_2/2_3_delete_middle_node.rb'
 
 class TestDeleteMiddleNode < Minitest::Test
-  include Util
-
   def setup
     @data = ('a'..'f').to_a
     @list = LinkedList.new
