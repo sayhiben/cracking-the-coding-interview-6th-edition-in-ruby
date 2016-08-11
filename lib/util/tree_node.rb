@@ -5,6 +5,14 @@ module Util
       def initialize(data)
         @data = data
       end
+
+      def to_s
+        @data.to_s
+      end
+
+      def inspect
+        to_s
+      end
     end
   end
 end
