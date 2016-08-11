@@ -23,7 +23,7 @@ def draw_line(screen, width, x1, x2, y)
     screen[index][0] &= (1 << (8 - x1 % 8)) - 1 if index == start_index
 
     # Clear ending pixels
-    screen[index][0] &= (-1 << (7 - x2 % 8)) if index == end_index
+    screen[index][0] &= (-1 << (8 - (x2 % 8) - 1)) if index == end_index
   end
   screen
 end
