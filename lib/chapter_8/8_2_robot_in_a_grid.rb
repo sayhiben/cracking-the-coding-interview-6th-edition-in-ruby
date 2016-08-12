@@ -6,6 +6,11 @@
 #   bottom right.
 #
 
+# This algorithm keeps track of visited cells and avoids visiting them more than
+#   once. This way, only new cells are explored. The book's solution impresses
+#   me as overly complicated, as I can't see a reason to conceptualize this
+#   problem beginning at the goal cell.
+#
 def robot_path(grid)
   visited = Set.new
   find_path(0, 0, grid, visited)
