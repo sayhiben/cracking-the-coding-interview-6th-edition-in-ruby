@@ -13,6 +13,7 @@ class BoxStacker
   end
 
   def max_stack
+    # Test each box as the starting point
     @boxes.each do |box|
       find_stack_height([box])
     end
@@ -24,6 +25,8 @@ class BoxStacker
   def find_stack_height(current_stack)
     top_box = current_stack.last
     return @lookup[top_box] if @lookup.key?(top_box)
+
+    # Try stacking each smaller box on top of this box
     smaller_boxes = @boxes.select do |box|
                       box.height < top_box.height &&
                       box.width < top_box.width &&
